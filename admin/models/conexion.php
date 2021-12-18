@@ -4,16 +4,16 @@ class Conexion{
 
 	public static function conectar(){
 // conexion local -------------------------------
-		$bd = "backendFramework";
-		$servername = "localhost";
-		$username = "root";
-		$password = "12345678";
+		// $bd = "backendFramework";
+		// $servername = "localhost";
+		// $username = "root";
+		// $password = "12345678";
 
 // conexion Server ------------------------------
-		//   $bd = "multie5_brcc";
-		//   $servername = "localhost";
-		//   $username = "multie5_brcc";
-		//   $password = "}2Ut@1ouvQ}C";
+		  $bd = "rickurbi_gym";
+		  $servername = "mysql1007.mochahost.com";
+		  $username = "rickurbi_gym";
+		  $password = "4Jc^vfpsG4W6";
 
 		try {
 		    $conn = new PDO("mysql:host=$servername;dbname=$bd", $username, $password);

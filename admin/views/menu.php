@@ -25,7 +25,7 @@
 						</li>
 
 						<li class="slide <?php if ($pagina == 'userAdd' || $pagina == 'userList' ) echo 'is-expanded'; ?>">
-							<a class="side-menu__item <?php if ($pagina == 'userAdd' || $pagina == 'userList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">User Admin</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item <?php if ($pagina == 'userAdd' || $pagina == 'userList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Usuarios</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li><a class="slide-item <?php if ($pagina == 'userAdd') echo 'active'; ?>" href="index.php?page=userAdd">Registrar</a></li>
 								<li><a class="slide-item <?php if ($pagina == 'userList') echo 'active'; ?>" href="index.php?page=userList">Lista de Usuarios</a></li>
@@ -33,7 +33,7 @@
 							</ul>
 						</li>
 						<li class="slide <?php if ($pagina == 'clientAdd' || $pagina == 'clientList' ) echo 'is-expanded'; ?>">
-							<a class="side-menu__item <?php if ($pagina == 'clientAdd' || $pagina == 'clientList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon icon icon-people"></i><span class="side-menu__label">Client Admin</span><i class="angle fa fa-angle-right"></i></a>
+							<a class="side-menu__item <?php if ($pagina == 'clientAdd' || $pagina == 'clientList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon icon icon-people"></i><span class="side-menu__label">Clientes</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
 								<li><a class="slide-item <?php if ($pagina == 'clientAdd') echo 'active'; ?>" href="index.php?page=clientAdd">Registrar</a></li>
 								<li><a class="slide-item <?php if ($pagina == 'clientList') echo 'active'; ?>" href="index.php?page=clientList">Lista de Clientes</a></li>

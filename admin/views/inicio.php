@@ -8,64 +8,64 @@
 	<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
 		<div class="card overflow-hidden">
 			<div class="card-header">
-				<h3 class="card-title">Price</h3>
+				<h3 class="card-title">Mensualidad</h3>
 				<div class="card-options"> <a class="btn btn-sm btn-primary" href="#">View</a> </div>
 			</div>
 			<div class="card-body ">
-				<h5 class="">Total Price</h5>
+				<h5 class="">Total</h5>
 				<h2 class="text-dark  mt-0 ">4,657</h2>
 				<div class="progress progress-sm mt-0 mb-2">
 					<div class="progress-bar bg-primary w-75" role="progressbar"></div>
 				</div>
-				<div class=""><i class="fa fa-caret-up text-green"></i>10% increases</div>
+				<div class=""><i class="fa fa-caret-up text-green"></i>80% de socios</div>
 			</div>
 		</div>
 	</div>
 	<div class=" col-sm-12 col-md-6 col-lg-6 col-xl-3">
 		<div class="card overflow-hidden">
 			<div class="card-header">
-				<h3 class="card-title">Stock</h3>
+				<h3 class="card-title">Inventario</h3>
 				<div class="card-options"> <a class="btn btn-sm btn-secondary" href="#">View</a> </div>
 			</div>
 			<div class="card-body ">
-				<h5 class="">Total Stock</h5>
+				<h5 class="">Total en Stock</h5>
 				<h2 class="text-dark  mt-0 ">2,592</h2>
 				<div class="progress progress-sm mt-0 mb-2">
 					<div class="progress-bar bg-secondary w-45" role="progressbar"></div>
 				</div>
-				<div class=""><i class="fa fa-caret-down text-danger"></i>12% decrease</div>
+				<!-- <div class=""><i class="fa fa-caret-down text-danger"></i>12% decrease</div> -->
 			</div>
 		</div>
 	</div>
 	<div class=" col-sm-12 col-md-6 col-lg-6 col-xl-3">
 		<div class="card overflow-hidden">
 			<div class="card-header">
-				<h3 class="card-title">Revenue</h3>
+				<h3 class="card-title">Ventas</h3>
 				<div class="card-options"> <a class="btn btn-sm btn-warning" href="#">View</a> </div>
 			</div>
 			<div class="card-body ">
-				<h5 class="">Total Revenue</h5>
+				<h5 class="">Total</h5>
 				<h2 class="text-dark  mt-0 ">3,517</h2>
 				<div class="progress progress-sm mt-0 mb-2">
 					<div class="progress-bar bg-warning w-50" role="progressbar"></div>
 				</div>
-				<div class=""><i class="fa fa-caret-down text-danger"></i>5% decrease</div>
+				<!-- <div class=""><i class="fa fa-caret-down text-danger"></i>5% decrease</div> -->
 			</div>
 		</div>
 	</div>
 	<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
 		<div class="card overflow-hidden">
 			<div class="card-header">
-				<h3 class="card-title">Investiment</h3>
+				<h3 class="card-title">Personalizados</h3>
 				<div class="card-options"> <a class="btn btn-sm btn-success" href="#">View</a> </div>
 			</div>
 			<div class="card-body ">
-				<h5 class="">Total Investiment</h5>
+				<h5 class="">Total</h5>
 				<h2 class="text-dark  mt-0  ">5,759</h2>
 				<div class="progress progress-sm mt-0 mb-2">
 					<div class="progress-bar bg-success w-25" role="progressbar"></div>
 				</div>
-				<div class=""><i class="fa fa-caret-up text-success"></i>15% increase</div>
+				<!-- <div class=""><i class="fa fa-caret-up text-success"></i>15% increase</div> -->
 			</div>
 		</div>
 	</div>
@@ -88,64 +88,22 @@
 	<div class="col-xl-4 col-lg-12 col-md-12">
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">Activity</h3>
-			</div>
-			<div class="card-body">
-				<div class="activity">
-					<img src="assets/images/faces/male/24.jpg" alt="" class="img-activity">
-					<div class="time-activity">
-						<div class="item-activity">
-							<p class="mb-0"><b>Adam	Berry</b> Add a new projects <b> AngularJS Template</b></p>
-							<small class="text-muted ">30 mins ago</small>
-						</div>
-					</div>
-					<img src="assets/images/faces/female/10.jpg" alt="" class="img-activity">
-					<div class="time-activity">
-						<div class="item-activity">
-							<p class="mb-0"><b>Irene Hunter</b> Add a new projects <b>Free HTML Template</b></p>
-							<small class="text-muted ">1 days ago</small>
-						</div>
-					</div>
-					<img src="assets/images/faces/male/4.jpg" alt="" class="img-activity">
-					<div class="time-activity">
-						<div class="item-activity">
-							<p class="mb-0"><b>John	Payne</b> Add a new projects <b>Free PSD Template</b></p>
-							<small class="text-muted ">3 days ago</small>
-						</div>
-					</div>
-					<img src="assets/images/faces/female/8.jpg" alt="" class="img-activity">
-					<div class="time-activity mb-0">
-						<div class="item-activity mb-0">
-							<p class="mb-0"><b>Julia Hardacre</b> Add a new projects <b>Free UI Template</b></p>
-							<small class="text-muted ">5 days ago</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-xl-4 col-lg-12 col-md-12">
-		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Customer Satisfaction</h3>
+				<h3 class="card-title">Estadísticas de Socios</h3>
 			</div>
 			<div class="card-body">
 				<div class="chats-wrap">
 					<div class="chat-details p-2">
 						<h6 class="mb-0">
-							<span class="font-weight-normal">Good</span>
-							<span class="float-right p-1">78%</span>
+							<span class="font-weight-normal">Asistencia</span>
+							<span class="float-right p-1">88%</span>
 						</h6>
 						<div class="progress progress-sm mt-3">
-							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-35" ></div>
+							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success w-85" ></div>
 						</div>
 					</div>
 					<div class="chat-details p-2">
 						<h6 class="mb-0">
-							<span class="font-weight-normal">Satisfied</span>
+							<span class="font-weight-normal">Mensualidad al día</span>
 							<span class="float-right p-1">82%</span>
 						</h6>
 						<div class="progress progress-sm mt-3">
@@ -183,59 +141,49 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
+	<!-- <div class="col-xl-4 col-lg-12 col-md-12">
 		<div class="card">
 			<div class="card-header">
-				<div class="card-title">Developing Team</div>
+				<h3 class="card-title">Activity</h3>
 			</div>
 			<div class="card-body">
-				<div class="ibox teams mb-30 bg-boxshadow">
-					<!-- Ibox Content -->
-					<div class="ibox-content teams">
-						<!-- Members -->
-						<div class="avatar-list avatar-list-stacked">
-							<span class="avatar brround cover-image cover-image" data-image-src="assets/images/faces/female/12.jpg" ></span>
-							<span class="avatar brround cover-image cover-image" data-image-src="assets/images/faces/female/21.jpg" ></span>
-							<span class="avatar brround cover-image cover-image" data-image-src="assets/images/faces/female/29.jpg"></span>
-							<span class="avatar brround cover-image cover-image" data-image-src="assets/images/faces/female/2.jpg"></span>
-							<span class="avatar brround cover-image cover-image" data-image-src="assets/images/faces/male/34.jpg"></span>
-							<span class="avatar brround cover-image cover-image">+8</span>
+				<div class="activity">
+					<img src="assets/images/faces/male/24.jpg" alt="" class="img-activity">
+					<div class="time-activity">
+						<div class="item-activity">
+							<p class="mb-0"><b>Adam	Berry</b> Add a new projects <b> AngularJS Template</b></p>
+							<small class="text-muted ">30 mins ago</small>
 						</div>
-						<!-- Team Board Details -->
-						<div class="teams-board-details mt-3">
-							<h4 class="font-weight-semibold">About Developing Team</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi. Contrary to popular belief, Lorem Ipsum is not simply random text classical Latin </p>
+					</div>
+					<img src="assets/images/faces/female/10.jpg" alt="" class="img-activity">
+					<div class="time-activity">
+						<div class="item-activity">
+							<p class="mb-0"><b>Irene Hunter</b> Add a new projects <b>Free HTML Template</b></p>
+							<small class="text-muted ">1 days ago</small>
 						</div>
-						<!-- Progress Details -->
-						<span class="font-weight-semibold">Status of current project:</span>
-						<div class="progress-details-teams mt-2 mb-4">
-							<div class="stat-percent mb-2">58%</div>
-							<div class="progress progress-sm ">
-								<div class="progress-bar bg-primary w-50" role="progressbar"></div>
-							</div>
+					</div>
+					<img src="assets/images/faces/male/4.jpg" alt="" class="img-activity">
+					<div class="time-activity">
+						<div class="item-activity">
+							<p class="mb-0"><b>John	Payne</b> Add a new projects <b>Free PSD Template</b></p>
+							<small class="text-muted ">3 days ago</small>
 						</div>
-						<div class="row mt-2">
-							<div class="col-4">
-								<div class="teams-rank text-muted">PROJECTS</div>
-								<span>24</span>
-							</div>
-							<div class="col-4">
-								<div class="teams-rank text-muted">RANKING</div>
-								<span>3rd</span>
-							</div>
-							<div class="col-4">
-								<div class="teams-rank text-muted">BUDGET</div>
-								<span>$36,25,854</span>
-							</div>
+					</div>
+					<img src="assets/images/faces/female/8.jpg" alt="" class="img-activity">
+					<div class="time-activity mb-0">
+						<div class="item-activity mb-0">
+							<p class="mb-0"><b>Julia Hardacre</b> Add a new projects <b>Free UI Template</b></p>
+							<small class="text-muted ">5 days ago</small>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>
 
-<div class="row">
+
+<!-- <div class="row">
 	<div class="col-xl-4 col-lg-12 col-md-12">
 		<div class="card">
 			<div class="card-header">
@@ -350,4 +298,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

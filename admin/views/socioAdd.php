@@ -1,8 +1,8 @@
 <div class="page-header">
     <h4 class="page-title">Registro de Cliente</h4>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Users Admin</a></li>
-        <li class="breadcrumb-item active" aria-current="page">User Add</li>
+        <li class="breadcrumb-item"><a href="#">Administración de Socios</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add</li>
     </ol>
 </div>
 <div class="row ">
@@ -31,7 +31,7 @@
                     <div class="col-sm-6 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" name="telefono" placeholder="6141234455" >
+                            <input type="text" class="form-control" name="telefono" maxlength="10" placeholder="6141234455" >
                         </div>
                     </div>
 
@@ -51,8 +51,8 @@
                     
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="form-label">Tipo Cliente</label>
-                            <select class="form-control custom-select select2" name="tipoCliente" >
+                            <label class="form-label">Tipo Socio</label>
+                            <select class="form-control custom-select select2" name="tipoSocio" >
                                 <option value="1">Socio</option>
                                 <option value="2">Estudiante</option>
                                 <option value="3">Referido</option>
@@ -67,7 +67,7 @@
                 <button type="submit" id="login" class="btn btn-primary">Registrar</button>
             </div>
             <?php
-                $registro = new clientes();
+                $registro = new socios();
                 $registro -> ctrRegistra();
             ?>
         </form>

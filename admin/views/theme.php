@@ -127,14 +127,15 @@ setlocale(LC_ALL,"es_ES");
                         <?php
                             if($pagina=="inicio" || 
 								$pagina == "search" ||
+								$pagina == "venta" ||
                                 $pagina == "userEdit" || 
                                 $pagina == "userList" || 
                                 $pagina == "userAdd" ||
 								$pagina == "userDel" ||
-								$pagina == "clientAdd" ||
-								$pagina == "clientDel" ||
-								$pagina == "clientEdit" || 
-                                $pagina == "clientList" ||
+								$pagina == "socioAdd" ||
+								$pagina == "socioDel" ||
+								$pagina == "socioEdit" || 
+                                $pagina == "socioList" ||
 								$pagina == "productAdd" ||
 								$pagina == "productDel" ||
 								$pagina == "productEdit" || 
@@ -221,6 +222,114 @@ setlocale(LC_ALL,"es_ES");
 
 		<!-- Custom JS -->
 		<script src="assets/js/app.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+
+		<!-- ECharts Plugin -->
+		<script src="assets/plugins/echarts/echarts.js"></script>
+		<script src="assets/plugins/echarts/echarts.js"></script>
+		<script>
+			$(function(e){
+				'use strict'
+				
+
+				/* chartjs (#sales-status) */
+				
+				var ctx = $('#sales-status');
+					ctx.height(310);
+					var myChart = new Chart(ctx, {
+						type: 'line',
+						data: {
+							labels: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+							type: 'line',
+							datasets: [{
+								label: "Mensualidades",
+								data: [20000, 25000, 38000, 42000, 65000, 74000, 66000, 58500, 69000, 75600, 58400, 78000],
+								backgroundColor: 'transparent',
+								borderColor: '#ec296b ',
+								borderWidth: 3,
+								pointStyle: 'circle',
+								pointRadius: 5,
+								pointBorderColor: 'transparent',
+								pointBackgroundColor: '#ec296b',
+							}, {
+								label: "Productos",
+								data: [25000, 32000, 26000, 41000, 69000, 76000, 38000, 42500, 63000, 72400, 58620, 96000],
+								backgroundColor: 'transparent',
+								borderColor: '#4801ff',
+								borderWidth: 3,
+								pointStyle: 'circle',
+								pointRadius: 5,
+								pointBorderColor: 'transparent',
+								pointBackgroundColor: '#4801ff',
+							}]
+						},
+						options: {
+							responsive: true,
+							maintainAspectRatio: false,
+							tooltips: {
+								mode: 'index',
+								titleFontSize: 12,
+								titleFontColor: '#000',
+								bodyFontColor: '#000',
+								backgroundColor: '#fff',
+								cornerRadius: 3,
+								intersect: false,
+							},
+							legend: {
+								display: true,
+								labels: {
+									usePointStyle: false,
+								},
+							},
+							scales: {
+								xAxes: [{
+									ticks: {
+										fontColor: "#605e7e",
+									},
+									display: true,
+									gridLines: {
+										display: true,
+										color:'rgba(96, 94, 126, 0.1)',
+										drawBorder: false
+									},
+									scaleLabel: {
+										display: false,
+										labelString: 'Month',
+										fontColor: 'transparent'
+									}
+								}],
+								yAxes: [{
+									ticks: {
+										fontColor: "#605e7e",
+									},
+									display: true,
+									gridLines: {
+										display: true,
+										color:'rgba(96, 94, 126, 0.1)',
+										drawBorder: false
+									},
+									scaleLabel: {
+										display: false,
+										labelString: 'sales',
+										fontColor: 'transparent'
+									}
+								}]
+							},
+							title: {
+								display: false,
+								text: 'Normal Legend'
+							}
+						}
+					});
+					/* chartjs (#sales-status) closed */
+
+				});
+
+		</script>
+
+		<!-- CHARTJS CHART -->
+		<script src="assets/plugins/chart/Chart.bundle.js"></script>
+		<script src="assets/plugins/chart/utils.js"></script>
 
 	</body>
 </html>

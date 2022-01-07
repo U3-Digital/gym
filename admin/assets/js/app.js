@@ -26,6 +26,11 @@ function viewSearchResult(data){
     var a = 1, b = 2;
 
     for (let i = 0; i < lista; i++){
+        var now = moment();
+        var fechaRegistro = moment(data[i]["fechaRegistro"]);
+        var ultimoPago = moment(data[i]["fechaUltimoPago"]);
+        var diferencia = moment.duration(now.diff(ultimoPago));
+        
         var div = document.createElement("div");
         div.class = "row";
         div.innerHTML = `
@@ -33,9 +38,17 @@ function viewSearchResult(data){
                 <div class="col-xl-8 col-lg-8 col-md-12">
                     <div class="card">
                         <div class="card-body" id="resultados">
-                            <h3>Id: ${data[i]["idCliente"]} </h3>
-                            <h3>Nombre: ${data[i]["nombres"] +" "+data[i]["apellidos"]}  </h3>
-                            <h3>Fecha: ${data[i]["fechaRegistro"]} </h3>
+                            <h3>Nombre:<strong> ${data[i]["nombres"] +" "+data[i]["apellidos"]}</strong></h3>
+                            <h3>Día de Pago:<strong> ${ultimoPago.format("D")}</h3>
+                            <h3>Dias Transcurridos: <strong> ${diferencia.days()}</strong></h3>
+                            <div class="" style="text-align:right;">
+                                <a class="btn btn-app" href="index.php?page=asistencia&socio=${data[i]["idSocio"]}">
+                                    <i class="fa fa-check"></i> Asistencia
+                                </a>
+                                <a class="btn btn-app" href="index.php?page=mensualidad&asistencia=${data[i]["idSocio"]}">
+                                    <i class="fa fa-dollar"></i> Meusalidad
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,59 +58,4 @@ function viewSearchResult(data){
         contenido.appendChild(div);
 
     }
-
-
-    
-    // var div = document.createElement('div');
-    // div.setAttribute('class', 'post block bc2');
-    // div.innerHTML = `
-    //     <div class="parent">
-    //         <div class="child">${a}</div>
-    //         <div class="child">+</div>
-    //         <div class="child">${b}</div>
-    //         <div class="child">=</div>
-    //         <div class="child">${a + b}</div>
-    //     </div>
-    // `;
-    // document.getElementById('posts').appendChild(div);
-
-
-//     var div = document.createElement("div");
-// div.style.width = "100px";
-// div.style.height = "100px";
-// div.style.background = "red";
-// div.style.color = "white";
-// div.innerHTML = "Hello";
-
-// document.getElementById("main").appendChild(div);
-// OR
-// document.body.appendChild(div);
-
-//     <div class="row">
-//         <div class="col-xl-8 col-lg-8 col-md-12">
-//             <div class="card">
-//                 <div class="card-header">
-//                     <h3 class="card-title">Last Year Overview</h3>
-//                 </div>
-//                 <div class="card-body" id="resultados">
-//                     <h3>Id: <span id="id"></span> </h3>
-//                     <h3>Nombre: <span id="nombre"></span> </h3>
-//                     <h4>Fecha: <span id="fecha"></span> </h4>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-
-
-    // if (Object.entries(data).length > 0){    // Object.entries(data).length   Valida si el objeto esta vacio o no 
-    //     document.getElementById("id").innerHTML = data[0]["idCliente"];
-    //     document.getElementById("nombre").innerHTML = data[0]["nombres"];
-    //     document.getElementById("fecha").innerHTML = data[0]["fechaRegistro"];
-    // }else{
-    //     document.getElementById("id").innerHTML = "No encontrado";
-    //     document.getElementById("nombre").innerHTML = ""
-    //     document.getElementById("fecha").innerHTML = "";
-    // }
-
-
 }

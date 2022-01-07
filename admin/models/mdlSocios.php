@@ -2,22 +2,22 @@
 
 require_once "conexion.php";
 
-class mdlClientes {
+class mdlSocios {
 
-    #       Agregar un cliente a la BD
+    #       Agregar un Socio a la BD
     # ---------------------------------------------
     
-    public static function mdlRegistraCliente($datos){
+    public static function mdlRegistraSocio($datos){
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO `clientes` (`idCliente`, `nombres`, `apellidos`, `telefono`, `email`, `tipoCliente`, `fechaNacimiento`, `fechaRegistro`) 
-        VALUES (NULL, :nombres, :apellidos, :telefono, :email, :tipoCliente, :fechaNacimiento, :fechaRegistro);");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO `socios` (`idSocio`, `nombres`, `apellidos`, `telefono`, `email`, `tipoSocio`, `fechaNacimiento`, `fechaRegistro`) 
+        VALUES (NULL, :nombres, :apellidos, :telefono, :email, :tipoSocio, :fechaNacimiento, :fechaRegistro);");
 
 
          $stmt -> bindParam(":nombres", $datos["nombres"], PDO::PARAM_STR);
          $stmt -> bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
          $stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
          $stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
-         $stmt -> bindParam(":tipoCliente", $datos["tipoCliente"], PDO::PARAM_STR);
+         $stmt -> bindParam(":tipoSocio", $datos["tipoSocio"], PDO::PARAM_STR);
          $stmt -> bindParam(":fechaNacimiento", $datos["fechaNacimiento"], PDO::PARAM_STR);
          $stmt -> bindParam(":fechaRegistro", $datos["fechaRegistro"], PDO::PARAM_STR);
          
@@ -30,20 +30,20 @@ class mdlClientes {
     }
 
 
-	#       Actualiza la informacion de un cliente a la BD
+	#       Actualiza la informacion de un Socio a la BD
     # ----------------------------------------------------------
     
-    public static function mdlActualizaCliente($datos){
+    public static function mdlActualizaSocio($datos){
 
-        $stmt = Conexion::conectar()->prepare("UPDATE `clientes` SET `nombres`=:nombres, `apellidos`=:apellidos,
-		`telefono`=:telefono, `email`=:email, `tipoCliente`=:tipoCliente, `fechaNacimiento`=:fechaNacimiento WHERE idCliente = :clientId;");
+        $stmt = Conexion::conectar()->prepare("UPDATE `socios` SET `nombres`=:nombres, `apellidos`=:apellidos,
+		`telefono`=:telefono, `email`=:email, `tipoSocio`=:tipoSocio, `fechaNacimiento`=:fechaNacimiento WHERE idSocio = :socioId;");
 
-        $stmt -> bindParam(":clientId", $datos["clientId"], PDO::PARAM_INT);
+        $stmt -> bindParam(":socioId", $datos["socioId"], PDO::PARAM_INT);
         $stmt -> bindParam(":nombres", $datos["nombres"], PDO::PARAM_STR);
         $stmt -> bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
         $stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
         $stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
-        $stmt -> bindParam(":tipoCliente", $datos["tipoCliente"], PDO::PARAM_STR);
+        $stmt -> bindParam(":tipoSocio", $datos["tipoSocio"], PDO::PARAM_STR);
         $stmt -> bindParam(":fechaNacimiento", $datos["fechaNacimiento"], PDO::PARAM_STR);
          
         if ($stmt -> execute()){
@@ -54,10 +54,10 @@ class mdlClientes {
         }
     }
 
-    	#LISTA CLIENTES
+    	#LISTA Socios
 	#-------------------------------------
 
-	public static function mdlListaCliente($tabla){
+	public static function mdlListaSocio($tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 		$stmt->execute();
@@ -70,12 +70,12 @@ class mdlClientes {
 	}
 
 
-    	#BUSCA UN CLIENTE
+    	#BUSCA UN Socio
 	#-------------------------------------
 
 	public static function mdlBusca($usuario, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idCliente = :id");
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE idSocio = :id");
 
 		$stmt->bindParam(":id", $usuario, PDO::PARAM_INT);
 
@@ -86,10 +86,10 @@ class mdlClientes {
 	}
 
 
-    	#BORRAR CLIENTE
+    	#BORRAR Socio
 	#-------------------------------------
-	public static function mdlBorrarCliente($datosModel,$tabla){
-		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idCliente = :id");
+	public static function mdlBorrarSocio($datosModel,$tabla){
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE idSocio = :id");
 		$stmt -> bindPARAM(":id",$datosModel, PDO::PARAM_INT);
 		if ($stmt->execute()){
 			return "success";

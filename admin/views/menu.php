@@ -24,6 +24,10 @@
 							<a class="side-menu__item <?php if ($pagina == 'search') echo 'active'; ?>" href="index.php?page=search"><i class="side-menu__icon fa fa-search"></i><span class="side-menu__label">Busca</span></a>
 						</li>
 
+						<li class="slide <?php if ($pagina == 'venta') echo 'is-expanded'; ?>">
+							<a class="side-menu__item <?php if ($pagina == 'venta') echo 'active'; ?>" href="index.php?page=venta"><i class="side-menu__icon fa fa-money"></i><span class="side-menu__label">venta</span></a>
+						</li>
+
 						<li class="slide <?php if ($pagina == 'userAdd' || $pagina == 'userList' ) echo 'is-expanded'; ?>">
 							<a class="side-menu__item <?php if ($pagina == 'userAdd' || $pagina == 'userList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-user"></i><span class="side-menu__label">Usuarios</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
@@ -32,11 +36,11 @@
 
 							</ul>
 						</li>
-						<li class="slide <?php if ($pagina == 'clientAdd' || $pagina == 'clientList' ) echo 'is-expanded'; ?>">
-							<a class="side-menu__item <?php if ($pagina == 'clientAdd' || $pagina == 'clientList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon icon icon-people"></i><span class="side-menu__label">Clientes</span><i class="angle fa fa-angle-right"></i></a>
+						<li class="slide <?php if ($pagina == 'socioAdd' || $pagina == 'socioList' ) echo 'is-expanded'; ?>">
+							<a class="side-menu__item <?php if ($pagina == 'socioAdd' || $pagina == 'socioList' ) echo 'active'; ?>" data-toggle="slide" href="#"><i class="side-menu__icon icon icon-people"></i><span class="side-menu__label">Socios</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
-								<li><a class="slide-item <?php if ($pagina == 'clientAdd') echo 'active'; ?>" href="index.php?page=clientAdd">Registrar</a></li>
-								<li><a class="slide-item <?php if ($pagina == 'clientList') echo 'active'; ?>" href="index.php?page=clientList">Lista de Clientes</a></li>
+								<li><a class="slide-item <?php if ($pagina == 'socioAdd') echo 'active'; ?>" href="index.php?page=socioAdd">Registrar</a></li>
+								<li><a class="slide-item <?php if ($pagina == 'socioList') echo 'active'; ?>" href="index.php?page=socioList">Lista de Socios</a></li>
 
 							</ul>
 						</li>

@@ -1,5 +1,5 @@
 <?php
-Class clientes {
+Class socios {
 
     public static function ctrRegistra(){
         if(isset($_POST["email"])){
@@ -19,11 +19,11 @@ Class clientes {
                            "apellidos" => $_POST["apellidos"],
                            "telefono" => $_POST["telefono"],
                            "email" => $_POST["email"],
-                           "tipoCliente" => $_POST["tipoCliente"],
+                           "tipoSocio" => $_POST["tipoSocio"],
                            "fechaNacimiento" => $fechaNacimiento,
                            "fechaRegistro" => $fechaRegistro);
 
-            $ingresa = mdlClientes::mdlRegistraCliente($datos);
+            $ingresa = mdlSocios::mdlRegistraSocio($datos);
 
             echo $ingresa;
 
@@ -31,13 +31,13 @@ Class clientes {
 
                     echo "<script>Swal.fire({
                         title: 'Registro Exitoso',
-                        text: 'El nuevo usuario ha sio registrado',
+                        text: 'El nuevo socio ha sio registrado',
                         icon: 'success',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'Ok'
                       }).then((result) => {
                         if (result.isConfirmed) {
-                            window.location='index.php?page=clientList'
+                            window.location='index.php?page=socioList'
                         }
                       })
                       </script>";
@@ -52,7 +52,7 @@ Class clientes {
                     confirmButtonText: 'Ok'
                   }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location='index.php?page=clientList'
+                        window.location='index.php?page=socioList'
                     }
                   })
                   </script>";
@@ -70,15 +70,15 @@ Class clientes {
             $timestamp = strtotime($original_date);
             $fechaNacimiento = date("Y-m-d", $timestamp);
         
-            $datos = array("clientId" => $_POST["clientId"],
+            $datos = array("socioId" => $_POST["socioId"],
                            "nombres" => $_POST["nombres"],
                            "apellidos" => $_POST["apellidos"],
                            "telefono" => $_POST["telefono"],
                            "email" => $_POST["email"],
-                           "tipoCliente" => $_POST["tipoCliente"],
+                           "tipoSocio" => $_POST["tipoSocio"],
                            "fechaNacimiento" => $fechaNacimiento);
 
-            $actualiza = mdlClientes::mdlActualizaCliente($datos);
+            $actualiza = mdlSocios::mdlActualizaSocio($datos);
 
             if ($actualiza == "ok"){
 
@@ -90,7 +90,7 @@ Class clientes {
                     confirmButtonText: 'Ok'
                     }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location='index.php?page=clientList'
+                        window.location='index.php?page=socioList'
                     }
                     })
                     </script>";
@@ -103,7 +103,7 @@ Class clientes {
                     confirmButtonText: 'Ok'
                   }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location='index.php?page=clientList'
+                        window.location='index.php?page=socioList'
                     }
                   })
                   </script>";
@@ -116,21 +116,21 @@ Class clientes {
 
     #  Lista todos los usuarios disponibles en la tabla que recibe como parametro
     #------------------------------------------------------------------------------------------------
-    public static function ctrListaClientes(){
+    public static function ctrListaSocios(){
 
-		$respuesta = mdlClientes::mdlListaCliente("clientes");
+		$respuesta = mdlSocios::mdlListaSocio("socios");
 
 		foreach ($respuesta as $row => $item){
-            if ($item["tipoCliente"] == 1) $tipoCliente = '<td>Socio</td>';
-            if ($item["tipoCliente"] == 2) $tipoCliente = '<td>Estudiante</td>';
-            if ($item["tipoCliente"] == 3) $tipoCliente = '<td>Referido</td>';
+            if ($item["tipoSocio"] == 1) $tipoSocio = '<td>Socio</td>';
+            if ($item["tipoSocio"] == 2) $tipoSocio = '<td>Estudiante</td>';
+            if ($item["tipoSocio"] == 3) $tipoSocio = '<td>Referido</td>';
             $cumple = strftime("%d de %B", strtotime($item["fechaNacimiento"]));
             $registro = strftime("%d de %B de %Y", strtotime($item["fechaRegistro"]));
 
             echo '
             <tr>
                 <td>'.$item["nombres"].' '.$item["apellidos"].'</td>'
-                .$tipoCliente.'
+                .$tipoSocio.'
                 <td>'.$item["telefono"].'</td>
                 <td>'.$registro.'</td>
                 <td>'.$cumple.'</td>
@@ -138,8 +138,8 @@ Class clientes {
                     <div class="item-action dropdown">
                         <a href="javascript:void(0)" data-toggle="dropdown" class="icon" aria-expanded="false"><i class="fe fe-more-vertical fs-20 text-dark"></i></a>
                         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-172px, 22px, 0px); top: 0px; left: 0px; will-change: transform;">
-                            <a href="index.php?page=clientEdit&idEditar='.$item["idCliente"].'" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Editar </a>
-                            <a href="index.php?page=clientList&idBorrar='.$item["idCliente"].'" class="dropdown-item"><i class="dropdown-icon fe fe-user-x"></i> Borrar </a>
+                            <a href="index.php?page=socioEdit&idEditar='.$item["idSocio"].'" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Editar </a>
+                            <a href="index.php?page=socioList&idBorrar='.$item["idSocio"].'" class="dropdown-item"><i class="dropdown-icon fe fe-user-x"></i> Borrar </a>
                         </div>
                     </div>
                 </td>
@@ -148,9 +148,9 @@ Class clientes {
 	}
 
 
-    	#BORRAR USUARIO
+    	#BORRAR SOCIO
 	#------------------------------------
-	public static function ctrBorrarCliente(){
+	public static function ctrBorrarSocio(){
 		if (isset($_GET['idBorrar'])){
             echo '<script>  
             Swal.fire({
@@ -163,7 +163,7 @@ Class clientes {
                 confirmButtonText: "Si, borrar!"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location="index.php?page=productDel&idBorrar="+'.$_GET["idBorrar"].'
+                    window.location="index.php?page=socioDel&idBorrar="+'.$_GET["idBorrar"].'
                 }
               })
               </script>';

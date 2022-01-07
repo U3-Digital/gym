@@ -1,15 +1,15 @@
 <div class="page-header">
-	<h4 class="page-title">Client List</h4>
+	<h4 class="page-title">Lista de Socios</h4>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Client Admin</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Client List</li>
+		<li class="breadcrumb-item"><a href="#">Administración de Socios</a></li>
+		<li class="breadcrumb-item active" aria-current="page">List</li>
 	</ol>
 </div>
 
 <div class="col-md-12 col-lg-12">
 	<div class="card">
 		<div class="card-header">
-			<div class="card-title">Clientes Registrados</div>
+			<div class="card-title">Socios Registrados</div>
 
 		</div>
 		<div class="card-body">
@@ -25,9 +25,9 @@
 					</thead>
 					<tbody>
 						<?php
-							$lista = new clientes();
-							$lista -> ctrListaClientes();
-							$lista -> ctrBorrarCliente();
+							$lista = new socios();
+							$lista -> ctrListaSocios();
+							$lista -> ctrBorrarSocio();
 						?>
 						
 					</tbody>

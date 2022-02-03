@@ -99,6 +99,38 @@ class mdlSocios {
 		//$stmt -> close();
 	}
 
+    public static function mdlActualizarAsistencia($idSocio) {
+
+        $statement = Conexion::conectar() -> prepare("INSERT INTO asistencia VALUES (NULL, :idSocio, now());");
+
+        $statement -> bindParam(":idSocio", $idSocio, PDO::PARAM_INT);
+
+        if ($statement -> execute()) {
+            return "success";
+        } else {
+            return "error";
+        }
+    }
+
+    public static function mdlRegistrarMensualidad($idSocio) {
+        $statement = Conexion::conectar() -> prepare("UPDATE socios SET fechaUltimoPago = now() WHERE idSocio = :idSocio;");
+
+        $statement -> bindParam(":idSocio", $idSocio, PDO::PARAM_INT);
+
+        if ($statement -> execute()) {
+            return "success";
+        } else {
+            return "error";
+        }
+    }
+
+    public static function mdlUltimoSocio() {
+        $statement = Conexion::conectar() -> prepare("SELECT * FROM socios ORDER BY idSocio DESC");
+
+        $statement -> execute();
+
+        return $statement -> fetchAll();
+    }
 
 }// Class
 

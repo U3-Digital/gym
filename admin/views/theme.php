@@ -124,26 +124,29 @@ setlocale(LC_ALL,"es_ES");
 					<div class="side-app">
 						
                         <!-- Contenido  -->
-                        <?php
-                            if($pagina=="inicio" || 
-								$pagina == "search" ||
-								$pagina == "venta" ||
-                                $pagina == "userEdit" || 
-                                $pagina == "userList" || 
-                                $pagina == "userAdd" ||
-								$pagina == "userDel" ||
-								$pagina == "socioAdd" ||
-								$pagina == "socioDel" ||
-								$pagina == "socioEdit" || 
-                                $pagina == "socioList" ||
-								$pagina == "productAdd" ||
-								$pagina == "productDel" ||
-								$pagina == "productEdit" || 
-                                $pagina == "productList" || 
-                                $pagina == "logOut" ){
-                                    include "views/".$pagina.".php";
-                            }
-                        ?>
+						<?php
+								if($pagina=="inicio" || 
+										$pagina == "search" ||
+										$pagina == "asistencia" ||
+										$pagina == "mensualidad" ||
+										$pagina == "venta" ||
+										$pagina == "ventaList" ||
+										$pagina == "userEdit" || 
+										$pagina == "userList" || 
+										$pagina == "userAdd" ||
+										$pagina == "userDel" ||
+										$pagina == "socioAdd" ||
+										$pagina == "socioDel" ||
+										$pagina == "socioEdit" || 
+										$pagina == "socioList" ||
+										$pagina == "productAdd" ||
+										$pagina == "productDel" ||
+										$pagina == "productEdit" || 
+										$pagina == "productList" || 
+										$pagina == "logOut" ){
+												include "views/".$pagina.".php";
+								}
+						?>
                         <!-- fin de contenido -->
 						
 					</div>
@@ -227,6 +230,11 @@ setlocale(LC_ALL,"es_ES");
 		<!-- ECharts Plugin -->
 		<script src="assets/plugins/echarts/echarts.js"></script>
 		<script src="assets/plugins/echarts/echarts.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#tablaVentas').DataTable();
+			})
+		</script>
 		<script>
 			$(function(e){
 				'use strict'

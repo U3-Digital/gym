@@ -29,9 +29,12 @@ function viewSearchResult(data){
         var now = moment();
         var fechaRegistro = moment(data[i]["fechaRegistro"]);
         var ultimoPago = moment(data[i]["fechaUltimoPago"]);
-        var diferencia = moment.duration(now.diff(ultimoPago));
+        var diferencia = ultimoPago.isValid() ? Math.floor(now.diff(ultimoPago) / 86400000) : '0'
         
         var div = document.createElement("div");
+
+        const pagoVencido = ultimoPago.isValid() && estaVencido(ultimoPago);
+
         div.class = "row";
         div.innerHTML = `
             <div class="row">
@@ -39,14 +42,15 @@ function viewSearchResult(data){
                     <div class="card">
                         <div class="card-body" id="resultados">
                             <h3>Nombre:<strong> ${data[i]["nombres"] +" "+data[i]["apellidos"]}</strong></h3>
-                            <h3>Día de Pago:<strong> ${ultimoPago.format("D")}</h3>
-                            <h3>Dias Transcurridos: <strong> ${diferencia.days()}</strong></h3>
+                            <h3>Día de Pago:<strong> ${ultimoPago.isValid() ? ultimoPago.format().split('T')[0] : 'Nunca'}</h3>
+                            <h3>Dias Transcurridos: <strong> ${diferencia}</strong></h3>
+                            ${pagoVencido ? '<h3 style="color: tomato;"><b>Pago vencido</b></h3>' : ''}
                             <div class="" style="text-align:right;">
                                 <a class="btn btn-app" href="index.php?page=asistencia&socio=${data[i]["idSocio"]}">
                                     <i class="fa fa-check"></i> Asistencia
                                 </a>
-                                <a class="btn btn-app" href="index.php?page=mensualidad&asistencia=${data[i]["idSocio"]}">
-                                    <i class="fa fa-dollar"></i> Meusalidad
+                                <a class="btn btn-app" href="index.php?page=mensualidad&socio=${data[i]["idSocio"]}">
+                                    <i class="fa fa-dollar"></i> Mensualidad
                                 </a>
                             </div>
                         </div>
@@ -57,5 +61,18 @@ function viewSearchResult(data){
 
         contenido.appendChild(div);
 
+    }
+
+    function estaVencido(u) {
+        const ultimoPago = new Date(u.format());
+        const fechaVencimiento = new Date(ultimoPago.getFullYear(), ultimoPago.getMonth() + 1, ultimoPago.getDate());
+        // console.log(fechaVencimiento);
+
+        console.log(ultimoPago);
+        const fechaHoy = new Date();
+
+        // console.log(fechaVencimiento.getTime());
+        // console.log(fechaHoy.getTime());
+        return fechaHoy.getTime() > fechaVencimiento.getTime();
     }
 }

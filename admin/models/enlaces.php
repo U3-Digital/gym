@@ -5,6 +5,7 @@ class EnlacesModels{
 	public static function enlacesModel($enlaces){
 
 		if($enlaces == "inicio" ||
+			 $enlaces == "asistencia" ||
 		   $enlaces == "ingreso" ||
 		   $enlaces == "registroUsuario" ||
 		   $enlaces == "lostPassword"||

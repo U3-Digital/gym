@@ -149,6 +149,16 @@ Class productos {
 		}
 	}
 
+    public function ctrSelectProductos() {
+        $respuesta = mdlProductos::mdlListaProducto("productos");
+
+        foreach ($respuesta as $producto) {
+            echo '
+                <option value="' . $producto['idProducto'] . '" precio="' . $producto['precioPublico'] . '">' . $producto['nombre'] . '</option>
+            ';
+        }
+    }
+
 
     	#BORRAR USUARIO
 	#------------------------------------

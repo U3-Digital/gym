@@ -154,13 +154,13 @@ Class socios {
 		if (isset($_GET['idBorrar'])){
             echo '<script>  
             Swal.fire({
-                title: "Esta seguro?",
-                text: "Esto no se podrá recuperar!",
+                title: "¿Está seguro?",
+                text: "¡Esto no se podrá recuperar!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Si, borrar!"
+                confirmButtonText: "¡Si, borrar!"
               }).then((result) => {
                 if (result.isConfirmed) {
                     window.location="index.php?page=socioDel&idBorrar="+'.$_GET["idBorrar"].'
@@ -169,6 +169,98 @@ Class socios {
               </script>';
 		}
 	}
+
+    public function ctrActualizarAsistencia() {
+        if (isset($_GET['socio'])) {
+            $idSocio = $_GET['socio'];
+            
+            $respuesta = mdlSocios::mdlActualizarAsistencia($idSocio);
+
+            if ($respuesta === "success") {
+                echo '<script>  
+                Swal.fire({
+                    title: "Actualizar asistencia",
+                    text: "La asistencia fue borrada exitosamente",
+                    icon: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Aceptar"
+                  }).then((result) => {
+                  
+                        window.location.href = "index.php?page=socioList";
+                    
+                  })
+                  </script>';
+            } else {
+                echo '<script>  
+                Swal.fire({
+                    title: "Actualizar asistencia",
+                    text: "La asistencia no se pudo actualizar",
+                    icon: "error",
+                    showCancelButton: false,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Aceptar"
+                  }).then((result) => {
+                  
+                        window.location.href = "index.php?page=socioList";
+                    
+                  })
+                  </script>';
+            }
+        }
+    }
+
+    public function ctrRegistrarMensualidad() {
+        if (isset($_GET['socio'])) {
+            $idSocio = $_GET['socio'];
+
+            $respuesta = mdlSocios::mdlRegistrarMensualidad($idSocio);
+
+            if ($respuesta === "success") {
+                echo '<script>  
+                Swal.fire({
+                    title: "Registrar mensualidad",
+                    text: "La mensualidad fue registrada exitosamente",
+                    icon: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Aceptar"
+                  }).then((result) => {
+                  
+                        window.location.href = "index.php?page=socioList";
+                    
+                  })
+                  </script>';
+            } else {
+                echo '<script>  
+                Swal.fire({
+                    title: "Registrar mensualidad",
+                    text: "La mensualidad no se pudo registrar",
+                    icon: "error",
+                    showCancelButton: false,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Aceptar"
+                  }).then((result) => {
+                  
+                        window.location.href = "index.php?page=socioList";
+                    
+                  })
+                  </script>';
+            }
+        }
+    }
+
+    public function ctrSelectSocios() {
+        $respuesta = mdlSocios::mdlListaSocio("socios");
+
+        foreach($respuesta as $socio) {
+            echo '<option value="' . $socio['idSocio'] . '">' . $socio['nombres'] . ' ' . $socio['apellidos'] . '</option>';
+        }
+    }
 
 }//Class
 

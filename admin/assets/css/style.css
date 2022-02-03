@@ -3,6 +3,11 @@
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700);
 
 /*  Reglas de estilo para la verificacion de passwords en el registro de usuarios */
+
+.borde {
+    border: 1px solid red;
+}
+
 .ocultar {
     display: none;
 }
@@ -11,6 +16,47 @@
     display: block;
 }
 
+.containerAgregar {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.listaProductos {
+    border: 1px solid #e8ebf3;
+    height: 200px;
+    overflow: auto;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    cursor: default;
+    padding: 16px;
+    border: 1px solid #e8ebf3;
+    margin: 2px;
+}
+
+.producto input {
+    width: 30%;
+    height: 24px;
+}
+
+.producto button {
+    background-color: transparent;
+    outline: none;   
+    border: none;
+    font-size: 18px;
+    padding: 0px;
+    color: #605e7e;
+    transition: 0.2s;
+}
+
+.producto button:hover {
+    color: #e4135a;
+}
 
 /* ###### bootstrap ####### */
 /*Color variables*/
@@ -20,7 +66,7 @@
 :root {
     --white: $white;
     --gray: $gray;
-    --gray-dark: #858d97;
+    --gray-dark: #9a9fa5;
     --black: $black;
     --azure: #00d6e6;
     --lime: #63e600;

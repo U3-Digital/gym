@@ -4,11 +4,13 @@ require_once "controller/ctlrUsuarios.php";
 require_once "controller/ctlrSocios.php";
 require_once "controller/ctlrProductos.php";
 require_once "controller/ctlrPublic.php";
+require_once "controller/ctrVentas.php";
 
 require_once "models/mdlUsuarios.php";
 require_once "models/mdlSocios.php";
 require_once "models/mdlProductos.php";
 require_once "models/mdlPublic.php";
+require_once "models/mdlVentas.php";
 //require_once "controller/formularios.controller.php";
 //require_once "controller/usuarios.controller.php";
 
